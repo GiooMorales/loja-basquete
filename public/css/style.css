@@ -1,0 +1,746 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+ul{
+    display: flex;
+    justify-content: center;
+}
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif; /*a fonte de todo o site*/
+    background-color: #ffffff; /*Define a cor para todo o fundo do site*/
+}
+
+nav {
+    justify-content: start;
+    box-shadow: 0px 5px 25px #e2e2e2;
+    background-color: #dbdbdb;
+    padding: 0.2rem 1rem; /*Reduz o preenchimento*/
+    display: flex; /*Define como flexível*/
+    align-items: center;/* Alinha os itens verticalmente*/
+    justify-content: space-between; /*Distribui os itens uniformemente*/
+    gap: 2rem; /*Define o espaçamento entre os itens*/
+}
+
+img {
+    width: 100%;
+    display: flex; /*define as imagens como elementos flexiveis*/
+}
+
+a {
+    text-decoration: none; /*remove o sublinhado padrão dos links */
+}
+
+compra {
+    padding: 0.5rem 1rem; /*Reduz o preenchimento*/
+    display: flex; /*Define como flexível*/
+    align-items: baseline;/* Alinha os itens */
+    gap: 2rem; /*Define o espaçamento entre os itens*/
+}
+
+.containerparcela {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+}
+
+select {
+    margin-bottom: 10px;
+    padding: 5px;
+}
+
+btncalc {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+btncalc:hover {
+    background-color: #0056b3;
+}
+
+
+/* Estilos gerais para os produtos */
+.product-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center; /* Centraliza os itens na grade */
+}
+
+.product-item {
+    flex: 1 1 calc(25% - 20px); /* Permite que os itens ocupem até 25% da largura disponível */
+    background-color: #fff; /* Fundo branco */
+    border: 1px solid #ddd; /* Borda cinza clara */
+    border-radius: 10px; /* Cantos arredondados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    text-align: center; /* Centraliza o texto */
+    padding: 20px; /* Espaçamento interno */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transições suaves */
+}
+
+.product-item:hover {
+    transform: translateY(-10px); /* Move o item ligeiramente para cima */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Sombra mais pronunciada */
+}
+
+.product-item img {
+    max-width: 200px; /* Imagem responsiva */
+    height: auto; /* Mantém a proporção da imagem */
+    border-radius: 10px 10px 0 0; /* Cantos arredondados na parte superior */
+    margin-left: 29%;
+}
+
+.product-item h3 {
+    font-size: 1.5rem; /* Tamanho da fonte */
+    color: #333; /* Cor do texto */
+    margin: 15px 0 10px; /* Margens */
+}
+
+.product-item p {
+    font-size: 1.2rem; /* Tamanho da fonte */
+    color: #666; /* Cor do texto */
+    margin: 10px 0; /* Margem inferior */
+}
+
+.product-item p:last-of-type {
+    font-weight: bold; /* Texto em negrito */
+    color: #bd3723; /* Cor do texto */
+}
+
+.product-item button {
+    padding: 12.5px 30px; /* Espaçamento interno */
+    background-color: #bd3723; /* Cor do fundo */
+    color: #fff; /* Cor do texto */
+    border: none; /* Sem borda */
+    border-radius: 25px; /* Bordas arredondadas */
+    font-weight: bold; /* Texto em negrito */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Transições suaves */
+    cursor: pointer; /* Cursor de ponteiro */
+}
+
+.product-item button:hover {
+    background-color: #bc432e; /* Cor do fundo ao passar o mouse */
+    transform: scale(1.05); /* Aumenta ligeiramente o botão */
+}
+
+.container{
+    display: flex;
+    justify-content: start;
+    width: 50%;
+    max-width: 1200px;
+    margin: 2cm; 
+}
+
+.product-details {
+    flex-direction: column; /* Organiza os elementos verticalmente */
+    max-width: 60000px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
+}
+
+.product-details img {
+    width: 50%; /* Para ocupar toda a largura do container */
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.product-details .descricao,
+.product-details .ficha {
+    margin-bottom: 20px; /* Espaçamento entre os elementos */
+}
+
+.product-details p {
+    line-height: 1.6;
+}
+
+.descricao h3,
+.ficha h3 {
+    font-weight: 4000; /* Ajustando o peso da fonte */
+}
+
+.compra-produto{
+    flex-direction: column;
+    display: flex;
+    float: right;
+}
+
+.compra-produto preco{
+    font-size: 30px;
+    color: #bd3723;
+}
+
+.compra-produto parcela{
+    font-size: 20px;
+    color: #bd3723;
+}
+
+
+.buttonbuy {
+    cursor: pointer;
+    --width: 100px;
+    --height: 35px;
+    --tooltip-height: 35px;
+    --tooltip-width: 90px;
+    --gap-between-tooltip-to-button: 18px;
+    --button-color: #c82727;
+    --tooltip-color: #fff;
+    max-width: 200%;
+    height: var(--height);
+    background: var(--button-color);
+    position: relative;
+    text-align: center;
+    border-radius: 0.45em;
+    font-family: "Arial";
+    transition: background 0.3s;
+  }
+  
+  .buttonbuy::before {
+    cursor: pointer;
+    position: absolute;
+    width: var(--tooltip-width);
+    height: var(--tooltip-height);
+    background-color: #555;
+    font-size: 0.9rem;
+    color: #fff;
+    border-radius: .25em;
+    line-height: var(--tooltip-height);
+    bottom: calc(var(--height) + var(--gap-between-tooltip-to-button) + 10px);
+    left: calc(50% - var(--tooltip-width) / 2);
+  }
+  
+  .buttonbuy::after {
+    cursor: pointer;
+    position: absolute;
+    content: '';
+    width: 0;
+    height: 0;
+    border: 10px solid transparent;
+    border-top-color: #555;
+    left: calc(50% - 10px);
+    bottom: calc(100% + var(--gap-between-tooltip-to-button) - 10px);
+  }
+  
+  .buttonbuy::after,.buttonbuy::before {
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.5s;
+  }
+  
+  .text {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .buttonbuy-wrapper,.text,.icon {
+    cursor: pointer;
+    overflow: hidden;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    color: #fff;
+  }
+  
+  .text {
+    cursor: pointer;
+    top: 0
+  }
+  
+  .text,.icon {
+    cursor: pointer;
+    transition: top 0.5s;
+  }
+  
+  .icon {
+    cursor: pointer;
+    color: #fff;
+    top: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .icon svg {
+    cursor: pointer;
+    width: 24px;
+    height: 24px;
+  }
+  
+  .buttonbuy:hover {
+    cursor: pointer;
+    background: #d30b0b;
+  }
+  
+  .buttonbuy:hover .text {
+    cursor: pointer;
+    top: -100%;
+  }
+  
+  .buttonbuy:hover .icon {
+    cursor: pointer;
+    top: 0;
+  }
+  
+  .buttonbuy:hover:before,.button:hover:after {
+    cursor: pointer;
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  .buttonbuy:hover:after {
+    cursor: pointer;
+    bottom: calc(var(--height) + var(--gap-between-tooltip-to-button) - 20px);
+  }
+  
+  .buttonbuy:hover:before {
+    cursor: pointer;
+    bottom: calc(var(--height) + var(--gap-between-tooltip-to-button));
+  }
+  
+  
+  
+  
+  .btnlogin {
+    background-color: #ffffff00;
+    color: #000000;
+    width: 8.5em;
+    height: 2.9em;
+    border: #ff000084 0.2em solid;
+    border-radius: 11px;
+    text-align: right;
+    transition: all 0.6s ease;
+  }
+  
+  .btnlogin:hover {
+    background-color: #ff0000;
+    cursor: pointer;
+  }
+  
+  .btnlogin svg {
+    width: 1.6em;
+    margin: -0.2em 0.8em 1em;
+    position: absolute;
+    display: flex;
+    transition: all 0.6s ease;
+  }
+  
+  .btnlogin:hover svg {
+    transform: translateX(5px);
+  }
+  
+  .textlogin {
+    font-weight: 550;
+    margin: 0 1.5em
+  }
+
+
+
+
+  .btnsearch {
+    margin-left: 20px;
+    position: relative;
+    border: none;
+    background-color: white;
+    color: #212121;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    font-weight: 600;
+    gap: 10px;
+    border-radius: 10px;
+    transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    overflow: hidden;
+  }
+  
+  .btnsearch span {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+  }
+  
+  .btnsearch::before {
+    content: "";
+    position: absolute;
+    background-color: rgb(240, 24, 20);
+    width: 100%;
+    height: 100%;
+    left: 0%;
+    bottom: 0%;
+    transform: translate(-100%, 100%);
+    border-radius: inherit;
+  }
+  
+  .btnsearch svg {
+    fill: rgb(245, 20, 20);
+    transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+  }
+  
+  .btnsearch:hover::before {
+    animation: shakeBack 0.6s forwards;
+  }
+  
+  .btnsearch:hover svg {
+    fill: white;
+    scale: 1.3;
+  }
+  
+  .btnsearch:active {
+    box-shadow: none;
+  }
+  
+  @keyframes shakeBack {
+    0% {
+      transform: translate(-100%, 100%);
+    }
+  
+    50% {
+      transform: translate(20%, -20%);
+    }
+  
+    100% {
+      transform: translate(0%, 0%);
+    }
+  }
+
+  
+
+
+.filtro{
+    flex-direction: column;
+    display: flex;
+    justify-content: start;
+}
+
+.back-link {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+    text-decoration: none;
+    color: #007BFF;
+}
+
+.back-link:hover {
+    text-decoration: underline;
+}
+
+/*Estilos para a logo*/
+.nav-logo {
+    max-width: 75px;
+}
+/*Estilos para os links da navegação*/
+.nav-links {
+  margin-left: 21%;
+  justify-content: center;
+    font-weight: 550;
+    list-style: none; /*Remove a estilização padrão de lista*/
+    display: flex; /*Define como flexível*/
+    align-items: center; /*Alinha os itens verticalmente*/
+    gap: 2rem; /*Define o espaçamento entre os itens*/
+}
+
+/*Estilos para os links dentro da navegação*/
+.link a {
+    position: relative;
+    padding-bottom: 0.5rem; /*Define o preenchimento inferior*/;
+    color: #000000;
+}
+
+    /*Estilos para os links quando o ponteiro ficar em cima*/
+    .link a::after {
+        content: "";
+        position: absolute;
+        height: 2px; /*altura*/
+        width: 0; /*define a largura inicial como zero*/
+        bottom: 0; /*Alinha na parte inferior*/
+        left: 0; /* Alinha a esquerda*/
+        background-color: #9f0000; 
+        transition: all 0.3s ease; /*transição suave*/
+}
+
+    .link a:hover::after {
+        width: 70%; /*aumenta a largura da linha*/
+}
+
+.containerprincipal{
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    margin-top: 2cm;
+}
+
+.containerfooter {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.btn {
+    padding: 12.5px 30px;
+    border: 0;
+    border-radius: 100px;
+    background-color: #bd3723;
+    color: #ffffff;
+    font-weight: Bold;
+    transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+}
+
+/*muda a cor do fundo quando coloca o ponteiro em cima*/
+.btn:hover {
+    background-color: #bc432e;
+    box-shadow: 0 0 20px #e22d20e1;
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+/* Topbar */
+.topbar {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+}
+
+/*Estilos para o Cabeçalho*/
+header {
+    position: relative;
+    padding-bottom: 1px; /*Adicionado para reduzir o espaço inferior*/
+    display: grid; /*Define como grade*/
+    grid-template-columns: repeat(2, 1fr); /*Define a estrutura de grade*/
+    align-items: center; /*Alinha os itens verticalmente*/
+    gap: 2rem; /*Espaçamento entre os itens*/
+}
+
+/*Estilos para o Conteúdo dentro do cabeçalho*/
+header .content h4 {
+    margin-bottom: 0.5rem; /*Reduz a margem inferior*/
+    color: #2f2d2d;
+    font-size: 1rem;
+    font-weight: 600; /*peso da fonte*/
+}
+
+/*Estilos para o título principal do cabeçalho*/
+header .content h1 {
+    color: rgb(0, 0, 0);
+    margin-bottom: 0.5rem; /*Reduz a margem inferior*/
+    font-size: 3rem;
+    font-weight: 700;
+    line-height: 3.5rem;
+}
+
+/*Estilos para uma parte do título principal*/
+header .content h1 span {
+    -webkit-text-fill-color: transparent; /*Define a cor do texto como transparente*/
+    -webkit-text-stroke: 1px #000000; /*Adiciona um contorno ao texto*/
+}
+
+/*Estilos para o parágrafo dentro do cabeçalho*/
+header .content p {
+    margin-bottom: 1rem; /*Reduz a margem inferior*/
+    color: rgb(0, 0, 0);
+}
+
+/*Estilos para a imagem do lado do cabeçalho*/
+header .image {
+    position: relative;
+    border-radius: 5px;
+}
+
+/*Estilos para o efeito do texto antes da imagem*/
+header .image::before {
+    content: 0; /*Adiciona o conteúdo pseudo-elemento*/
+    position: absolute;
+    top: 0; /*Alinha no topo*/
+    left: 50%; /*Alinha ao centro horizontalmente*/
+    transform: translateX(50%); /*Move para a esquerda em 50%*/
+    font-size: 38rem;
+    font-weight: 400;
+    line-height: 20rem;
+    color: #303030;
+    opacity: 0.2;
+    z-index: -100; /*ordem de empilhamento*/
+}
+
+/*Estilos para a imagem do lado do cabeçalho*/
+header .image img {
+    width: 550px;
+    margin: auto; /*Centraliza horizontalmente*/
+}
+
+/*Estilos para o Cabeçalho de seção*/
+section .header {
+    margin-bottom: 1rem;
+    color: #000000;
+    text-align: center;
+    font-size: 2.25rem;
+    font-weight: 600;
+}
+
+/* Navigation */
+.navbar {
+    background-color: #444;
+}
+
+.navbar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: space-around;
+}
+
+.navbar ul li {
+    margin: 0;
+}
+
+.navbar ul li a {
+    display: block;
+    padding: 15px 20px;
+    color: #fff;
+    text-decoration: none;
+}
+
+.navbar ul li a:hover {
+    background-color: #555;
+}
+
+/* Main Content */
+.main-content {
+    padding: 5px 0;
+}
+
+/* Footer */
+.footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.footer ul {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0 0;
+    display: flex;
+    justify-content: center;
+}
+
+.footer ul li {
+    margin: 0 10px;
+}
+
+.footer ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.footer ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .header-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .product-item {
+        flex: 1 1 calc(50% - 20px);
+    }
+}
+
+@media (max-width: 480px) {
+    .product-item {
+        flex: 1 1 100%;
+    }
+}
+
+
+
+.cssbuttons-io-button {
+    background: rgb(245, 20, 20);
+    color: white;
+    font-family: inherit;
+    padding: 0.35em;
+    padding-left: 1.2em;
+    font-size: 17px;
+    font-weight: 500;
+    border-radius: 0.9em;
+    border: none;
+    letter-spacing: 0.05em;
+    display: flex;
+    align-items: center;
+    box-shadow: inset 0 0 1.6em -0.6em #714da6;
+    overflow: hidden;
+    position: relative;
+    height: 2.8em;
+    padding-right: 3.3em;
+    cursor: pointer;
+  }
+  
+  .cssbuttons-io-button .icoon {
+    background: white;
+    margin-left: 1em;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 2.2em;
+    width: 2.2em;
+    border-radius: 0.7em;
+    box-shadow: 0.1em 0.1em 0.6em 0.2em rgb(245, 20, 20);
+    right: 0.3em;
+    transition: all 0.3s;
+  }
+  
+  .cssbuttons-io-button:hover .icoon {
+    width: calc(100% - 0.6em);
+  }
+  
+  .cssbuttons-io-button .icoon svg {
+    width: 1.1em;
+    transition: transform 0.3s;
+    color: rgb(245, 20, 20);
+  }
+  
+  .cssbuttons-io-button:hover .icoon svg {
+    transform: translateX(0.1em);
+  }
+  
+  .cssbuttons-io-button:active .icoon {
+    transform: scale(0.95);
+  }
+  
+.perfil{
+    border-radius: 2rem;
+    max-width: 12%;
+    cursor: pointer;
+    box-shadow: 10px 10px 24px #969696;
+}
+
+.perfilesair {
+    font-weight: 550;
+    list-style: none; /*Remove a estilização padrão de lista*/
+    display: flex; /*Define como flexível*/
+    justify-content: end;
+    align-items: center; /*Alinha os itens verticalmente*/
+    gap: 2rem; /*Define o espaçamento entre os itens*/
+}
