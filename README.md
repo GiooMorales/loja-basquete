@@ -1,6 +1,14 @@
 # Loja Baska 🏀
 
 Aplicação web construída em PHP puro que simula uma loja de artigos de basquete. O catálogo é mantido em memória através de arrays PHP e as interações de login/cadastro acontecem no front-end via `localStorage`, o que torna o projeto leve e fácil de executar em qualquer ambiente com PHP instalado.
+<img width="1843" height="883" alt="image" src="https://github.com/user-attachments/assets/046debe6-2890-4b22-b6e1-82796d39ffc7" />
+
+<img width="1606" height="719" alt="image" src="https://github.com/user-attachments/assets/11e9f39a-a26d-41fd-b17b-6a1078afdfd3" />
+
+<img width="1691" height="877" alt="image" src="https://github.com/user-attachments/assets/4b977f8f-1416-4efd-8ab8-00e6f615bbac" />
+
+<img width="1743" height="879" alt="image" src="https://github.com/user-attachments/assets/8d71dbb2-4278-4119-836f-322b459d6506" />
+
 
 ## ✨ Principais funcionalidades
 - **Página inicial** com hero banner, navegação e vitrine de produtos em destaque (`index.php`).
