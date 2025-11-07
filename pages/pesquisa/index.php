@@ -75,7 +75,7 @@ if (!$filtrosAplicados) {
             <button type="submit">Pesquisar</button>
         </form>
 
-        <a href="login/signin.html">
+        <a href="../login/signin.html">
             <button class="btnlogin" id="entrarBtn">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                     stroke="currentColor" class="w-6 h-6">
